@@ -1,0 +1,132 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff758c, #ff7eb3); /* Soft pink gradient background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden; /* Only prevent horizontal scroll, but allow vertical scroll */
+}
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 900px; /* Center the content and add spacing */
+    padding: 0 20px;
+}
+
+/* Glowing Title */
+.glow {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5), 
+                 0 0 30px #ff758c, 0 0 40px #ff7eb3;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8), 
+                     0 0 40px #ff758c, 0 0 50px #ff7eb3;
+    }
+}
+
+/* Birthday message styling */
+.message {
+    font-size: 1.5rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Images styling */
+.images img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: 0 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #fff, 0 0 30px #ff7eb3, 0 0 40px #ff758c;
+}
+
+/* Letter Styling */
+.letter {
+    background: #fff;
+    padding: 20px;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    border: 5px solid #ff7eb3;
+    box-shadow: 0 0 15px rgba(255, 120, 130, 0.5), 0 0 30px rgba(255, 80, 130, 0.4);
+    color: #333;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+/* Decorative ribbon on the letter */
+.letter:before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 10px;
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    border-radius: 5px;
+}
+
+/* Custom letter paragraph styles */
+.letter p {
+    margin: 10px 0;
+}
+
+.letter p:first-child {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #ff758c;
+}
+
+.letter p:last-child {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #ff7eb3;
+}
+
+/* Confetti Canvas */
+canvas#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+/* Adding party decorations around the page */
+body::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('party_elements.png');
+    background-size: contain;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
